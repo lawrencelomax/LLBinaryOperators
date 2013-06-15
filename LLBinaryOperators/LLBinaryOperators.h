@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern inline NSUInteger LL_NSRangeMidpoint(NSRange range);
+
 typedef NSComparisonResult (^MI9BinaryEnumerationBlock) ( NSUInteger index, id object, BOOL * stop );
 
 @interface LLBinaryOperators : NSObject

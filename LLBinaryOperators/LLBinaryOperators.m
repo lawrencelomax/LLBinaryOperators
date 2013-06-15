@@ -8,12 +8,12 @@
 
 #import "LLBinaryOperators.h"
 
-static inline NSUInteger LL_NSRangeMidpoint(NSRange range)
+extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
 {
     if(range.length == 0)
         return range.location;
     
-    NSUInteger midpoint = range.location + ((NSMaxRange(range) - range.location) / 2);
+    NSUInteger midpoint = range.location + (range.length / 2);
     return midpoint;
 }
 

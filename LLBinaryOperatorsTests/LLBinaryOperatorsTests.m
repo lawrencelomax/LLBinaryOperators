@@ -4,6 +4,23 @@
 
 SPEC_BEGIN(LLBinaryOperatorsTests)
 
+describe(@"Range Operators", ^{
+    
+    it(@"should return the position when the length is zero", ^{
+        [[theValue(LL_NSRangeMidpoint(NSMakeRange(10, 0))) should] equal:theValue(10)];
+    });
+    
+    it(@"should return an evenly dividable midpoint", ^{
+        [[theValue(LL_NSRangeMidpoint(NSMakeRange(20, 5))) should] equal:theValue(22)];
+    });
+
+    it(@"should the value below the middle for non evenly dividable midpoint", ^{
+        [[theValue(LL_NSRangeMidpoint(NSMakeRange(30, 6))) should] equal:theValue(33)];
+    });
+
+    
+});
+
 describe(@"the binary operators", ^{
    
     __block NSArray * orderedNumbers;
