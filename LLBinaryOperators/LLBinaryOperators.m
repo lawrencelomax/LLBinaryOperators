@@ -25,8 +25,9 @@
         BOOL stop = NO;
         NSComparisonResult result = block(index, value, &stop);
         
-        if(stop) return;
-        if(range.length == 0) return;
+        if(result == NSOrderedSame) break;
+        if(stop) break;
+        if(range.length == 0) break;
         
         if(result == NSOrderedDescending)
         {

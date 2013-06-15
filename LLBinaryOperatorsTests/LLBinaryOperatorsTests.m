@@ -24,6 +24,54 @@ describe(@"the binary operators", ^{
             
         });
         
+        it(@"should move downwards to the new middle when NSOrderedDescending is returned", ^{
+            
+            __block NSUInteger enumCount = 0;
+            
+            [LLBinaryOperators enumerateArray:orderedNumbers withBlock:^NSComparisonResult(NSUInteger index, id object, BOOL *stop) {
+                if(enumCount == 0){
+                    enumCount++;
+                    return NSOrderedDescending;
+                } else {
+                    [[theValue(index) should] equal:theValue(2)];
+                    *stop = YES;
+                    return NSOrderedSame;
+                }
+            }];
+            
+        });
+        
+        it(@"should move upwards to the new middle when NSOrderedAscending is returned", ^{
+            
+            __block NSUInteger enumCount = 0;
+            
+            [LLBinaryOperators enumerateArray:orderedNumbers withBlock:^NSComparisonResult(NSUInteger index, id object, BOOL *stop) {
+                if(enumCount == 0){
+                    enumCount++;
+                    return NSOrderedAscending;
+                } else {
+                    [[theValue(index) should] equal:theValue(7)];
+                    *stop = YES;
+                    return NSOrderedSame;
+                }
+            }];
+            
+        });
+        
+        it(@"should break out when NSOrderingSame is returned", ^{
+            
+            __block NSUInteger enumCount = 0;
+            
+            [LLBinaryOperators enumerateArray:orderedNumbers withBlock:^NSComparisonResult(NSUInteger index, id object, BOOL *stop) {
+                enumCount++;
+                return NSOrderedSame;
+            }];
+            
+            [[theValue(enumCount) should] equal:theValue(1)];
+            
+        });
+
+        
     });
     
 });
