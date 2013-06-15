@@ -129,6 +129,44 @@ describe(@"the binary operators", ^{
             [[theValue(enumCount) should] equal:theValue(4)];
         });
         
+        it(@"should bounce back and forth", ^{
+           
+            __block NSUInteger enumCount = 0;
+            
+            [LLBinaryOperators enumerateArray:orderedNumbers withBlock:^NSComparisonResult(NSUInteger index, id object, BOOL *stop) {
+                enumCount++;
+
+                if(enumCount == 1)
+                {
+                    [[theValue(index) should] equal:theValue(5)];
+                    return NSOrderedAscending;
+                }
+                else if(enumCount == 2)
+                {
+                    [[theValue(index) should] equal:theValue(8)];
+                    return NSOrderedDescending;
+                }
+                else if(enumCount == 3)
+                {
+                    [[theValue(index) should] equal:theValue(7)];
+                    return NSOrderedDescending;
+                }
+                else if(enumCount == 4)
+                {
+                    [[theValue(index) should] equal:theValue(6)];
+                    return NSOrderedDescending;
+                }
+                else
+                {
+                    fail(@"Should have broken out before here");
+                }
+                
+                return NSOrderedDescending;
+            }];
+
+            
+        });
+        
     });
     
 });
