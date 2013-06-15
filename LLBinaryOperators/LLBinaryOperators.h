@@ -15,3 +15,9 @@ typedef NSComparisonResult (^MI9BinaryEnumerationBlock) ( NSUInteger index, id o
 + (void) enumerateArray:(NSArray *)array withBlock:(MI9BinaryEnumerationBlock)block;
 
 @end
+
+@interface NSArray (LLBinaryOperators)
+
+- (void) ll_binaryEnumerate:(MI9BinaryEnumerationBlock)block;
+
+@end

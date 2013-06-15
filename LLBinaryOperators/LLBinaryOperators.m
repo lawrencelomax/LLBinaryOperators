@@ -49,3 +49,12 @@ static NSUInteger midpoint(NSRange range)
 }
 
 @end
+
+@implementation NSArray (LLBinaryOperators)
+
+- (void) ll_binaryEnumerate:(MI9BinaryEnumerationBlock)block
+{
+    [LLBinaryOperators enumerateArray:self withBlock:block];
+}
+
+@end

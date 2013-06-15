@@ -12,7 +12,20 @@ describe(@"the binary operators", ^{
         orderedNumbers = @[@0, @1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
     });
     
-    describe(@"the directions of enumeration", ^{
+    context(@"an empty array", ^{
+       
+        it(@"should never call the enumeration block", ^{
+            
+            [LLBinaryOperators enumerateArray:@[] withBlock:^NSComparisonResult(NSUInteger index, id object, BOOL *stop) {
+                fail(@"This block should not be called");
+                return NSOrderedSame;
+            }];
+            
+        });
+        
+    });
+    
+    context(@"the directions of enumeration", ^{
         
         it(@"should start off in the middle", ^{
             
@@ -70,7 +83,6 @@ describe(@"the binary operators", ^{
             [[theValue(enumCount) should] equal:theValue(1)];
             
         });
-
         
     });
     
