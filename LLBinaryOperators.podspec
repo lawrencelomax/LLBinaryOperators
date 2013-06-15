@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/lawrencelomax/LLBinaryOperators"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Lawrence Lomax" => "lomax.lawrence@gmail.com" }
-  s.source       = { :git => "https://github.com/lawrencelomax/LLBinaryOperators.git", :commit => "82e8fea710f483b7f741bbe68eef692a911c60ca" }
+  s.source       = { :git => "https://github.com/lawrencelomax/LLBinaryOperators.git", :commit => "a618916d4151c0785c79c717b84d9d3ef73693bb" }
   s.source_files = 'LLBinaryOperators/Classes/'
   s.requires_arc = true
 end
