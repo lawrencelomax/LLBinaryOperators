@@ -8,6 +8,15 @@
 
 #import "LLBinaryOperators.h"
 
+static inline NSUInteger LL_NSRangeMidpoint(NSRange range)
+{
+    if(range.length == 0)
+        return range.location;
+    
+    NSUInteger midpoint = range.location + ((NSMaxRange(range) - range.location) / 2);
+    return midpoint;
+}
+
 @implementation LLBinaryOperators
 
 + (void) enumerateArray:(NSArray *)array withBlock:(MI9BinaryEnumerationBlock)block
@@ -19,7 +28,7 @@
 {
     while (range.length > 0)
     {
-        NSUInteger index = midpoint(range);
+        NSUInteger index = LL_NSRangeMidpoint(range);
         id value = array[index];
         
         BOOL stop = NO;
@@ -32,20 +41,16 @@
         if(result == NSOrderedDescending)
         {
             range = NSMakeRange(range.location, index - range.location);
+            continue;
         }
-        else
+        else if(result == NSOrderedAscending)
         {
             range = NSMakeRange(index + 1, NSMaxRange(range) - (index + 1));
+            continue;
         }
+        
+        NSAssert(NO, @"Some unknown enum value, %d", result);
     }
-}
-
-static NSUInteger midpoint(NSRange range)
-{
-    if(range.length == 0)
-        return range.location;
-    
-    return (NSUInteger) NSMaxRange(range) / 2;
 }
 
 @end

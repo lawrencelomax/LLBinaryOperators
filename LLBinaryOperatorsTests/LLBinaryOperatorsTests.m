@@ -25,6 +25,22 @@ describe(@"the binary operators", ^{
         
     });
     
+    context(@"an array of 1", ^{
+       
+        it(@"should call the enum block once", ^{
+            
+            __block NSUInteger enumCount = 0;
+            
+            [LLBinaryOperators enumerateArray:@[@1] withBlock:^NSComparisonResult(NSUInteger index, id object, BOOL *stop) {
+                enumCount++;
+                return NSOrderedDescending;
+            }];
+            
+            [[theValue(enumCount) should] equal:theValue(1)];
+        });
+        
+    });
+    
     context(@"the directions of enumeration", ^{
         
         it(@"should start off in the middle", ^{
@@ -63,7 +79,7 @@ describe(@"the binary operators", ^{
                     enumCount++;
                     return NSOrderedAscending;
                 } else {
-                    [[theValue(index) should] equal:theValue(7)];
+                    [[theValue(index) should] equal:theValue(8)];
                     *stop = YES;
                     return NSOrderedSame;
                 }
