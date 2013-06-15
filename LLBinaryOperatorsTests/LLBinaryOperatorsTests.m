@@ -117,6 +117,18 @@ describe(@"the binary operators", ^{
             
         });
         
+        it(@"should break out when there are no more values to enumerate", ^{
+           
+            __block NSUInteger enumCount = 0;
+            
+            [LLBinaryOperators enumerateArray:orderedNumbers withBlock:^NSComparisonResult(NSUInteger index, id object, BOOL *stop) {
+                enumCount++;
+                return NSOrderedDescending;
+            }];
+            
+            [[theValue(enumCount) should] equal:theValue(4)];
+        });
+        
     });
     
 });
