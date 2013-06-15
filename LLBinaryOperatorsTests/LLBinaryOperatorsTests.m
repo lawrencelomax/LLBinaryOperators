@@ -1,32 +1,31 @@
-//
-//  LLBinaryOperatorsTests.m
-//  LLBinaryOperatorsTests
-//
-//  Created by Lawrence Lomax on 14/06/13.
-//  Copyright (c) 2013 Lawrence Lomax. All rights reserved.
-//
+#import <Kiwi/Kiwi.h>
 
-#import "LLBinaryOperatorsTests.h"
+#import "LLBinaryOperators.h"
 
-@implementation LLBinaryOperatorsTests
+SPEC_BEGIN(LLBinaryOperatorsTests)
 
-- (void)setUp
-{
-    [super setUp];
+describe(@"the binary operators", ^{
+   
+    __block NSArray * orderedNumbers;
     
-    // Set-up code here.
-}
-
-- (void)tearDown
-{
-    // Tear-down code here.
+    beforeEach(^{
+        orderedNumbers = @[@0, @1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
+    });
     
-    [super tearDown];
-}
+    describe(@"the directions of enumeration", ^{
+        
+        it(@"should start off in the middle", ^{
+            
+            [LLBinaryOperators enumerateArray:orderedNumbers withBlock:^NSComparisonResult(NSUInteger index, id object, BOOL *stop) {
+                [[theValue(index) should] equal:theValue(5)];
+                *stop = YES;
+                return NSOrderedSame;
+            }];
+            
+        });
+        
+    });
+    
+});
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in LLBinaryOperatorsTests");
-}
-
-@end
+SPEC_END

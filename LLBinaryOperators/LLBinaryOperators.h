@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NSComparisonResult (^MI9BinaryEnumerationBlock) ( NSUInteger index, id object, BOOL * stop );
+
 @interface LLBinaryOperators : NSObject
+
++ (void) enumerateArray:(NSArray *)array withBlock:(MI9BinaryEnumerationBlock)block;
 
 @end

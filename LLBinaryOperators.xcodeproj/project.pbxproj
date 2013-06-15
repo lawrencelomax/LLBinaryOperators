@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		218D4EE4176BE36E00097CB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218D4EE3176BE36E00097CB1 /* Foundation.framework */; };
-		218D4EE9176BE36E00097CB1 /* LLBinaryOperators.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 218D4EE8176BE36E00097CB1 /* LLBinaryOperators.h */; };
-		218D4EEB176BE36E00097CB1 /* LLBinaryOperators.m in Sources */ = {isa = PBXBuildFile; fileRef = 218D4EEA176BE36E00097CB1 /* LLBinaryOperators.m */; };
 		218D4EF3176BE36E00097CB1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218D4EF2176BE36E00097CB1 /* SenTestingKit.framework */; };
 		218D4EF5176BE36E00097CB1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218D4EF4176BE36E00097CB1 /* UIKit.framework */; };
 		218D4EF6176BE36E00097CB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218D4EE3176BE36E00097CB1 /* Foundation.framework */; };
 		218D4EF9176BE36E00097CB1 /* libLLBinaryOperators.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218D4EE0176BE36E00097CB1 /* libLLBinaryOperators.a */; };
 		218D4EFF176BE36E00097CB1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 218D4EFD176BE36E00097CB1 /* InfoPlist.strings */; };
 		218D4F02176BE36E00097CB1 /* LLBinaryOperatorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 218D4F01176BE36E00097CB1 /* LLBinaryOperatorsTests.m */; };
+		218D4F0D176BE5BD00097CB1 /* LLBinaryOperators.m in Sources */ = {isa = PBXBuildFile; fileRef = 218D4F0C176BE5BD00097CB1 /* LLBinaryOperators.m */; };
 		BBA7663B47C9491EB4BEF326 /* libPods-LLBinaryOperatorsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB3EDAA1AFA4EF8AFF827DB /* libPods-LLBinaryOperatorsTests.a */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				218D4EE9176BE36E00097CB1 /* LLBinaryOperators.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,15 +44,14 @@
 		218D4EE0176BE36E00097CB1 /* libLLBinaryOperators.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLLBinaryOperators.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		218D4EE3176BE36E00097CB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		218D4EE7176BE36E00097CB1 /* LLBinaryOperators-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLBinaryOperators-Prefix.pch"; sourceTree = "<group>"; };
-		218D4EE8176BE36E00097CB1 /* LLBinaryOperators.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLBinaryOperators.h; sourceTree = "<group>"; };
-		218D4EEA176BE36E00097CB1 /* LLBinaryOperators.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLBinaryOperators.m; sourceTree = "<group>"; };
 		218D4EF1176BE36E00097CB1 /* LLBinaryOperatorsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLBinaryOperatorsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		218D4EF2176BE36E00097CB1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		218D4EF4176BE36E00097CB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		218D4EFC176BE36E00097CB1 /* LLBinaryOperatorsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLBinaryOperatorsTests-Info.plist"; sourceTree = "<group>"; };
 		218D4EFE176BE36E00097CB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		218D4F00176BE36E00097CB1 /* LLBinaryOperatorsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLBinaryOperatorsTests.h; sourceTree = "<group>"; };
 		218D4F01176BE36E00097CB1 /* LLBinaryOperatorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLBinaryOperatorsTests.m; sourceTree = "<group>"; };
+		218D4F0B176BE5BD00097CB1 /* LLBinaryOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBinaryOperators.h; sourceTree = "<group>"; };
+		218D4F0C176BE5BD00097CB1 /* LLBinaryOperators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBinaryOperators.m; sourceTree = "<group>"; };
 		5206169935674CB9A68B1CBE /* Pods-LLBinaryOperatorsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLBinaryOperatorsTests.xcconfig"; path = "Pods/Pods-LLBinaryOperatorsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		7AB3EDAA1AFA4EF8AFF827DB /* libPods-LLBinaryOperatorsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLBinaryOperatorsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,8 +114,8 @@
 		218D4EE5176BE36E00097CB1 /* LLBinaryOperators */ = {
 			isa = PBXGroup;
 			children = (
-				218D4EE8176BE36E00097CB1 /* LLBinaryOperators.h */,
-				218D4EEA176BE36E00097CB1 /* LLBinaryOperators.m */,
+				218D4F0B176BE5BD00097CB1 /* LLBinaryOperators.h */,
+				218D4F0C176BE5BD00097CB1 /* LLBinaryOperators.m */,
 				218D4EE6176BE36E00097CB1 /* Supporting Files */,
 			);
 			path = LLBinaryOperators;
@@ -135,7 +132,6 @@
 		218D4EFA176BE36E00097CB1 /* LLBinaryOperatorsTests */ = {
 			isa = PBXGroup;
 			children = (
-				218D4F00176BE36E00097CB1 /* LLBinaryOperatorsTests.h */,
 				218D4F01176BE36E00097CB1 /* LLBinaryOperatorsTests.m */,
 				218D4EFB176BE36E00097CB1 /* Supporting Files */,
 			);
@@ -279,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218D4EEB176BE36E00097CB1 /* LLBinaryOperators.m in Sources */,
+				218D4F0D176BE5BD00097CB1 /* LLBinaryOperators.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
