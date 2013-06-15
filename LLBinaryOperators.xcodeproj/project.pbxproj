@@ -50,8 +50,8 @@
 		218D4EFC176BE36E00097CB1 /* LLBinaryOperatorsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LLBinaryOperatorsTests-Info.plist"; sourceTree = "<group>"; };
 		218D4EFE176BE36E00097CB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		218D4F01176BE36E00097CB1 /* LLBinaryOperatorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLBinaryOperatorsTests.m; sourceTree = "<group>"; };
-		218D4F0B176BE5BD00097CB1 /* LLBinaryOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBinaryOperators.h; sourceTree = "<group>"; };
-		218D4F0C176BE5BD00097CB1 /* LLBinaryOperators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBinaryOperators.m; sourceTree = "<group>"; };
+		218D4F0B176BE5BD00097CB1 /* LLBinaryOperators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLBinaryOperators.h; path = Classes/LLBinaryOperators.h; sourceTree = "<group>"; };
+		218D4F0C176BE5BD00097CB1 /* LLBinaryOperators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLBinaryOperators.m; path = Classes/LLBinaryOperators.m; sourceTree = "<group>"; };
 		5206169935674CB9A68B1CBE /* Pods-LLBinaryOperatorsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLBinaryOperatorsTests.xcconfig"; path = "Pods/Pods-LLBinaryOperatorsTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		7AB3EDAA1AFA4EF8AFF827DB /* libPods-LLBinaryOperatorsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLBinaryOperatorsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
