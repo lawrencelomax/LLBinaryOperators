@@ -10,16 +10,26 @@
 
 extern inline NSUInteger LL_NSRangeMidpoint(NSRange range);
 
-typedef NSComparisonResult (^MI9BinaryEnumerationBlock) ( NSUInteger index, id object, BOOL * stop );
+typedef NSComparisonResult (^LLBinaryEnumerationBlock) (NSUInteger index, id object, NSRange currentRange, BOOL * stop );
 
 @interface LLBinaryOperators : NSObject
 
-+ (void) enumerateArray:(NSArray *)array withBlock:(MI9BinaryEnumerationBlock)block;
+/**
+ * Enumerate through the given ordered array with a block.
+ * The block defines which direction to traverse from each index, by returning an NSComparisonResult
+ *  Returning NSOrderedSame will break out of the enumeration
+ *  Returning NSOrderedAscending will enumerate upwards if there are any remaining values
+ *  Returning NSOrderedDescening will enumerate downwards if there are any remaining values
+ */
++ (void) enumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block;
 
 @end
 
 @interface NSArray (LLBinaryOperators)
 
-- (void) ll_binaryEnumerate:(MI9BinaryEnumerationBlock)block;
+/**
+ * A convenience method for +enumerateArray:withBlock:
+ */
+- (void) ll_binaryEnumerate:(LLBinaryEnumerationBlock)block;
 
 @end

@@ -13,18 +13,18 @@ extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
     if(range.length == 0)
         return range.location;
     
-    NSUInteger midpoint = range.location + (range.length / 2);
+    NSUInteger midpoint = range.location + floor(range.length / 2);
     return midpoint;
 }
 
 @implementation LLBinaryOperators
 
-+ (void) enumerateArray:(NSArray *)array withBlock:(MI9BinaryEnumerationBlock)block
++ (void) enumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block
 {
     [self enumerateArray:array withBlock:block inRange:NSMakeRange(0, array.count)];
 }
 
-+ (void) enumerateArray:(NSArray *)array withBlock:(MI9BinaryEnumerationBlock)block inRange:(NSRange)range
++ (void) enumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block inRange:(NSRange)range
 {
     while (range.length > 0)
     {
@@ -32,17 +32,19 @@ extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
         id value = array[index];
         
         BOOL stop = NO;
-        NSComparisonResult result = block(index, value, &stop);
+        NSComparisonResult result = block(index, value, range, &stop);
         
         if(result == NSOrderedSame) break;
         if(stop) break;
         if(range.length == 0) break;
         
+        // Enumerate Downwards
         if(result == NSOrderedDescending)
         {
             range = NSMakeRange(range.location, index - range.location);
             continue;
         }
+        // Enumerate Upwards
         else if(result == NSOrderedAscending)
         {
             range = NSMakeRange(index + 1, NSMaxRange(range) - (index + 1));
@@ -57,7 +59,7 @@ extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
 
 @implementation NSArray (LLBinaryOperators)
 
-- (void) ll_binaryEnumerate:(MI9BinaryEnumerationBlock)block
+- (void) ll_binaryEnumerate:(LLBinaryEnumerationBlock)block
 {
     [LLBinaryOperators enumerateArray:self withBlock:block];
 }
