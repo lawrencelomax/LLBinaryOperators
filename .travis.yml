@@ -1,6 +1,6 @@
 language: objective-c
 before_install:
     - brew update
-    - brew install xctool --HEAD
+    - brew install xctool
     - ls -la
 script: xctool -workspace LLBinaryOperators.xcworkspace -sdk iphonesimulator -scheme LLBinaryOperators clean build test
