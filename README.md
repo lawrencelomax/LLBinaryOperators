@@ -60,3 +60,4 @@ if(intersectionIndex != NSNotFound) {
 }
 ```
 
+Now you have an array of ```SomeObject```s that intersect with the ```intersectionRect```. This can be handy for any ```UICollectionViewLayoutAttributes``` that you have sorted by offset from the scrollView origin.
