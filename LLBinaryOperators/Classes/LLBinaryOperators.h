@@ -16,7 +16,8 @@ typedef NSComparisonResult (^LLBinaryEnumerationBlock) (NSUInteger index, id obj
 
 /**
  * Enumerate through the given ordered array with a block.
- * The block defines which direction to traverse from each index, by returning an NSComparisonResult
+ * @param array The Array to enumerate over
+ * @param block The block defines which direction to traverse from each index, by returning an NSComparisonResult
  *  Returning NSOrderedSame will break out of the enumeration
  *  Returning NSOrderedAscending will enumerate upwards if there are any remaining values
  *  Returning NSOrderedDescening will enumerate downwards if there are any remaining values
@@ -28,7 +29,8 @@ typedef NSComparisonResult (^LLBinaryEnumerationBlock) (NSUInteger index, id obj
 @interface NSArray (LLBinaryOperators)
 
 /**
- * A convenience method for +enumerateArray:withBlock:
+ * A convenience method for +enumerateArray:withBlock: on self
+ * @block The block to enumerate over the array
  */
 - (void) ll_binaryEnumerate:(LLBinaryEnumerationBlock)block;
 
