@@ -19,7 +19,7 @@ extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
 
 @implementation LLBinaryOperators
 
-+ (void) enumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block
++ (void) binareEnumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block
 {
     [self enumerateArray:array withBlock:block inRange:NSMakeRange(0, array.count)];
 }
@@ -61,7 +61,7 @@ extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
 
 - (void) ll_binaryEnumerate:(LLBinaryEnumerationBlock)block
 {
-    [LLBinaryOperators enumerateArray:self withBlock:block];
+    [LLBinaryOperators binareEnumerateArray:self withBlock:block];
 }
 
 @end

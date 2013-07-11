@@ -26,7 +26,7 @@ describe(@"the binary operators", ^{
        
         it(@"should never call the enumeration block", ^{
             
-            [LLBinaryOperators enumerateArray:@[] withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:@[] withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 fail(@"This block should not be called");
                 return NSOrderedSame;
             }];
@@ -42,7 +42,7 @@ describe(@"the binary operators", ^{
             __block NSUInteger enumCount = 0;
             __block NSRange firstRange;
             
-            [LLBinaryOperators enumerateArray:@[@1] withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:@[@1] withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 enumCount++;
                 firstRange = range;
                 return NSOrderedDescending;
@@ -64,7 +64,7 @@ describe(@"the binary operators", ^{
         
         it(@"should start off in the middle", ^{
             
-            [LLBinaryOperators enumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 [[theValue(index) should] equal:theValue(5)];
                 [[theValue(range) should] equal:theValue(NSMakeRange(0, 11))];
                 *stop = YES;
@@ -77,7 +77,7 @@ describe(@"the binary operators", ^{
             
             __block NSUInteger enumCount = 0;
             
-            [LLBinaryOperators enumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 if(enumCount == 0){
                     enumCount++;
                     return NSOrderedDescending;
@@ -95,7 +95,7 @@ describe(@"the binary operators", ^{
             
             __block NSUInteger enumCount = 0;
             
-            [LLBinaryOperators enumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 if(enumCount == 0){
                     enumCount++;
                     return NSOrderedAscending;
@@ -113,7 +113,7 @@ describe(@"the binary operators", ^{
             
             __block NSUInteger enumCount = 0;
             
-            [LLBinaryOperators enumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 enumCount++;
                 return NSOrderedSame;
             }];
@@ -125,7 +125,7 @@ describe(@"the binary operators", ^{
             
             __block NSUInteger enumCount = 0;
             
-            [LLBinaryOperators enumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 enumCount++;
                 return NSOrderedDescending;
             }];
@@ -137,7 +137,7 @@ describe(@"the binary operators", ^{
             
             __block NSUInteger enumCount = 0;
             
-            [LLBinaryOperators enumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 enumCount++;
                 
                 if(enumCount == 1)
@@ -188,7 +188,7 @@ describe(@"the binary operators", ^{
         it(@"should bounce back and forth", ^{
             __block NSUInteger enumCount = 0;
             
-            [LLBinaryOperators enumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
+            [LLBinaryOperators binareEnumerateArray:array withBlock:^NSComparisonResult(NSUInteger index, id object, NSRange range, BOOL *stop) {
                 enumCount++;
                 
                 if(enumCount == 1)

@@ -14,23 +14,24 @@ Sometimes, you may wish to get the performance gain of a binary enumeration with
 
 ### Usage
 
-For example, you may have a large array of (NSValue wrapped) CGRects which are ordered in an NSArray and want to obtain a subarray that intersects with a given query rect
+For example, you may have a large array of (NSValue wrapped) CGRects which are ordered by position in an NSArray, and want to obtain a subarray that intersects with a given query rect
 
 You can use the category:
 ```
 - (void) ll_binaryEnumerate:(MI9BinaryEnumerationBlock)block;
 ```
 
-You can do this to obtain the rectange that intersects with the lowest value in the x dimension:
+You can do this to obtain the rectangles that intersect with the lowest value in the x dimension:
 ```
 NSArray * arrayOfCGRects = ....;
 CGRect intersectionRect = ....;
 __block NSUInteger intersectionIndex = NSNotFound;
-[intersectionAray ll_binaryEnumerate:NSComparisonResult^( NSUInteger index, SomeObject * object, BOOL * stop) {
+[arrayOfCGRects ll_binaryEnumerate:NSComparisonResult^(NSUInteger index, SomeObject * object, NSRange range, BOOL * stop) {
   CGRect * rect = [[object boundsValue] CGRectValue];
   if(CGRectIntersectsRect(rect, intersectionRect) {
     intersectionIndex = index;
     *stop = YES;
+    // Enumerates downwards
     return NSOrderedDescending;
   } else if (CGRectGetMinX(rect) > CGRectGetMaxX(intersectionRect)) {
     return NSOrderedAscending;
@@ -42,3 +43,20 @@ __block NSUInteger intersectionIndex = NSNotFound;
   return NSOrderedSame;
 }];
 ```
+
+We have the leftmost index, now linearly enumerate upwards until we hit the rightmost index
+```
+NSMutableArray * intersectionObjects = [NSMutableArray array];
+if(intersectionIndex != NSNotFound) {
+    [arrayOfCGRects enumerateObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(intersectionIndex, [array count] - indersectionIndex)] options:0 usingBlock:^(SomeObject * obj, NSUInteger idx, BOOL *stop) {
+        if(CGRectIntersectsRect([[obj boundsValue] CGRectValue], intersectionRect)) {
+            [intersectionObjects addObject:obj];
+            return;
+        }
+        *stop = YES;
+    }];
+    
+    NSLog(@"Objects %@ intersect rect %@", intersectionObjects, NSStringFromCGRect(intersectionRect));
+}
+```
+

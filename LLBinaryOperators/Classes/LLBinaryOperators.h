@@ -21,7 +21,7 @@ typedef NSComparisonResult (^LLBinaryEnumerationBlock) (NSUInteger index, id obj
  *  Returning NSOrderedAscending will enumerate upwards if there are any remaining values
  *  Returning NSOrderedDescening will enumerate downwards if there are any remaining values
  */
-+ (void) enumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block;
++ (void) binareEnumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block;
 
 @end
 
