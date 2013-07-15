@@ -30,12 +30,15 @@ __block NSUInteger intersectionIndex = NSNotFound;
   CGRect * rect = [object bounds];
   if(CGRectIntersectsRect(rect, intersectionRect) {
     intersectionIndex = index;
-    *stop = YES;
-    // Enumerates downwards
+    // We have an index that intersects, but it could be anywhere in a range
+    // we should go downwards to find the lowest index that intersects
+    // When we have this index we can enumerate linearly up to find the highest index
     return NSOrderedDescending;
   } else if (CGRectGetMinX(rect) > CGRectGetMaxX(intersectionRect)) {
+    // Move right (up) the array
     return NSOrderedAscending;
   } else if (CGRectGetMaxX(rect) < CGRectGetMinX(intersectionRect)) {
+    // Move left (down) along the array
     return NSOrderedDescending;
   }
   
