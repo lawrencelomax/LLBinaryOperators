@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A75F0A1D-626F-419B-9910-ED2390A1E0B8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LLBinaryOperators</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AA92547E-2E9C-4739-8FC2-320979B59261</key>
+		<string>ssh://github.com/lawrencelomax/LLBinaryOperators.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LLBinaryOperators.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AA92547E-2E9C-4739-8FC2-320979B59261</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/lawrencelomax/LLBinaryOperators.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AA92547E-2E9C-4739-8FC2-320979B59261</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AA92547E-2E9C-4739-8FC2-320979B59261</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LLBinaryOperators</string>
+		</dict>
+	</array>
+</dict>
+</plist>
