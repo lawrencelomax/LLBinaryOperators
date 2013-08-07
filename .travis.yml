@@ -3,4 +3,4 @@ before_install:
     - brew update
     - brew install xctool
     - ls -la
-script: xctool -workspace LLBinaryOperators.xcworkspace -sdk iphonesimulator -scheme LLBinaryOperators clean build test
+script: xctool -workspace 'LLBinaryOperators.xcworkspace' -scheme 'LLBinaryOperators' -configuration Debug -sdk iphonesimulator clean build test
