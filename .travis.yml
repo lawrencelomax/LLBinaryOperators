@@ -1,3 +1,6 @@
 language: objective-c
+before_install:
+    - brew uninstall xctool
+    - brew install xctool --HEAD
 install: true
 script: xctool ARCHS=i386 VALID_ARCHS=i386 CURRENT_ARCH=i386 ONLY_ACTIVE_ARCH=NO -workspace 'LLBinaryOperators.xcworkspace' -scheme 'LLBinaryOperators' -configuration Debug -sdk iphonesimulator clean build test
