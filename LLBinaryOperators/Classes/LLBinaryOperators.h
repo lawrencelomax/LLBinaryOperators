@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern inline NSUInteger LL_NSRangeMidpoint(NSRange range);
+extern NSUInteger LL_NSRangeMidpoint(NSRange range);
 
 typedef NSComparisonResult (^LLBinaryEnumerationArrayBlock) (NSUInteger index, id object, NSRange currentRange, BOOL *stop);
 
