@@ -3,3 +3,4 @@
 #endif
 
 #import "Pods-LLBinaryOperatorsTests-environment.h"
+#import <SenTestingKit/SenTestingKit.h>

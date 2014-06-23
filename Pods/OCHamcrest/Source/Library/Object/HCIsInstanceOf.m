@@ -1,6 +1,6 @@
 //
 //  OCHamcrest - HCIsInstanceOf.m
-//  Copyright 2013 hamcrest.org. See LICENSE.txt
+//  Copyright 2014 hamcrest.org. See LICENSE.txt
 //
 //  Created by: Jon Reid, http://qualitycoding.org/
 //  Docs: http://hamcrest.github.com/OCHamcrest/
@@ -9,20 +9,17 @@
 
 #import "HCIsInstanceOf.h"
 
-#import "HCDescription.h"
-#import "HCRequireNonNilObject.h"
-
 
 @implementation HCIsInstanceOf
 
-+ (id)isInstanceOf:(Class)type
++ (instancetype)isInstanceOf:(Class)type
 {
     return [[self alloc] initWithType:type];
 }
 
 - (BOOL)matches:(id)item
 {
-    return [item isKindOfClass:theClass];
+    return [item isKindOfClass:self.theClass];
 }
 
 - (NSString *)expectation
@@ -33,9 +30,7 @@
 @end
 
 
-#pragma mark -
-
-id<HCMatcher> HC_instanceOf(Class aClass)
+id HC_instanceOf(Class aClass)
 {
     return [HCIsInstanceOf isInstanceOf:aClass];
 }
