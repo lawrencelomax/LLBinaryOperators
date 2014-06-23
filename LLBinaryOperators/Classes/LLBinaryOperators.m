@@ -8,7 +8,7 @@
 
 #import "LLBinaryOperators.h"
 
-extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
+extern NSUInteger LL_NSRangeMidpoint(NSRange range)
 {
     if(range.length == 0)
         return range.location;
@@ -19,12 +19,12 @@ extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
 
 @implementation LLBinaryOperators
 
-+ (void) binareEnumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block
++ (void) binareEnumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationArrayBlock)block
 {
     [self enumerateArray:array withBlock:block inRange:NSMakeRange(0, array.count)];
 }
 
-+ (void) enumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationBlock)block inRange:(NSRange)range
++ (void) enumerateArray:(NSArray *)array withBlock:(LLBinaryEnumerationArrayBlock)block inRange:(NSRange)range
 {
     while (range.length > 0)
     {
@@ -51,7 +51,7 @@ extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
             continue;
         }
         
-        NSAssert(NO, @"Some unknown enum value, %d", result);
+        NSAssert(NO, @"Unknown NSOrdering range Provided: %ld", result);
     }
 }
 
@@ -59,7 +59,7 @@ extern inline NSUInteger LL_NSRangeMidpoint(NSRange range)
 
 @implementation NSArray (LLBinaryOperators)
 
-- (void) ll_binaryEnumerate:(LLBinaryEnumerationBlock)block
+- (void) ll_binaryEnumerate:(LLBinaryEnumerationArrayBlock)block
 {
     [LLBinaryOperators binareEnumerateArray:self withBlock:block];
 }
