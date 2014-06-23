@@ -18,7 +18,7 @@ You may have a object that contains some layout information for a large number o
 
 Use the category method. method:
 ```
-- (void) ll_binaryEnumerate:(MI9BinaryEnumerationBlock)block;
+- (void) ll_binaryEnumerate:(LLBinaryEnumerationBlock)block;
 ```
 
 You can do this to obtain the rectangles that intersect with the lowest value in the x dimension:
